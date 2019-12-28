@@ -12,3 +12,8 @@ class PersonaViewSet(viewsets.ModelViewSet):
     serializer_class = PersonaSerializer
 
 
+def index(request):
+    return render(request, 'index.html')
+
+
+

@@ -3,7 +3,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rrhh.models import Persona
 from rest_framework import routers, serializers, viewsets
-from rrhh.views import PersonaViewSet
+from rrhh.views import PersonaViewSet, index
+
 
 #class PersonaSerializer(serializers.Serializer):
 #    class Meta:
@@ -29,7 +30,7 @@ router.register('personas', PersonaViewSet)
 
 
 urlpatterns = [
-
+    path('index', index ),
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
